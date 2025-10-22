@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlleAlle's Commission</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/star.png">
+  <style>
+    html,
+    button,
+    input,
+    textarea {
+      font-family: 'Comfortaa';
+    }
+
+    html {
+      width: 100%;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      margin: 0;
+      flex: 1;
+      background-image: url("bg.png");
+      background-repeat: repeat;
+      padding: 10px 0px;
+    }
+
+    @media only screen and (min-width: 600px) {
+      body {
+        padding: 10px 50px;
+      }
+    }
+
+    .page:not([hidden]) {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
+
+    .section {
+      border: 3px solid #FD0;
+      border-radius: 5px;
+      padding: 30px;
+      background-color: #0006;
+      color: #ccc;
+    }
+
+    .big-button {
+      background-color: #FD0;
+      padding: 10px;
+      font-size: 15pt;
+      border: none;
+      border-radius: 5px;
+    }
+
+    h1 {
+      font-size: 30pt;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    h1,
+    h2,
+    strong {
+      color: #FD0;
+    }
+
+    h3 {
+      color: #fff;
+    }
+
+    .big-button:hover:not(:disabled) {
+      filter: brightness(90%);
+      cursor: pointer;
+    }
+
+    .big-button:disabled {
+      background-color: #aaa;
+    }
+
+    .input-field {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      padding-bottom: 15px;
+      border-bottom: 2px solid #FD0;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    input:not([type="radio"]) {
+      height: 25px;
+      font-size: 12pt;
+    }
+
+    .input-group input[type="radio"]:checked+label {
+      background-color: #FD0;
+      border: 2px solid #FD0;
+      color: #000;
+      border-radius: 5px;
+      padding: 4px 8px;
+    }
+
+    .input-group input[type="radio"]:not(:checked)+label {
+      background-color: #0000;
+      border: 2px solid #FD0;
+      color: #FD0;
+      border-radius: 5px;
+      padding: 4px 8px;
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+      overflow-y: visible;
+      overflow-x: hidden;
+    }
+
+    .radio-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .radio-choices>div>label {
+      flex: 1;
+      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .required {
+      background-color: #FD0;
+      color: #0009;
+      font-size: 10pt;
+      padding: 3px;
+      border-radius: 4px;
+      pointer-events: none;
+    }
+
+    a {
+      color: #FD0;
+    }
+
+    .credit {
+      font-size: 10pt;
+      color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page" data-page-name="landing">
+    <div class="section" style="text-align: center;">
+      <h1>AlleAlle's Commission Page</h1>
+      <p>Before you decide to commission, make sure to read Terms of Service!</p>
+    </div>
+    <button class="big-button" data-page-name="terms-of-service">Read the Terms of Service</button>
+  </div>
+
+  <div class="page" data-page-name="terms-of-service" hidden>
+    <div class="section">
+      <h2>Terms of Service</h2>
+      <h3>Payment</h3>
+      <ul>
+        <li>Payment is done via PayPal (USD).</li>
+        <li>Local payment (IDR) can be done via local bank or e-wallet which we can discuss further.</li>
+        <li>Payment must be done after I send the sketch and it is approved. <strong>No payment means no progress beyond this point.</strong></li>
+        <li>There will be additional costs for multiple characters and complicated design.</li>
+      </ul>
+      <h3>Refund Policy</h3>
+      <ul>
+        <li><strong>There will be NO refunds after the work has been started,</strong> unless there is a hindrance from my side which causes me to not be able to finish it. I will contact you as soon as possible to discuss the continuity of this commission.</li>
+        <li>Only I have the rights to refund the commission.</li>
+      </ul>
+      <h3>Working Method</h3>
+      <ul>
+        <li>Progress will be reported at each stage (Sketch, Lining, Base Color, Coloring).</li>
+        <li>I will send the sketch/draft first. After the sketch is approved, I will ask for payment before continuing the work.</li>
+        <li>The artwork will be completed within 2 weeks. There will be further notice if there are things that delay me from completing the artwork in time.</li>
+        <li>Please refer to the <em>Working Process</em> section below for more info.</li>
+      </ul>
+      <h3>Ownership</h3>
+      <ul>
+        <li>The artwork is for personal use only.</li>
+        <li>By default, the artwork is not allowed to be used for commercial purposes. Please discuss with me if you want to use the artwork for that purpose.</li>
+        <li>I still have the rights to use the artwork as my portfolio and post it on any platform.</li>
+        <li>You can post it on your account, but make sure you give me a credit or leave the watermark visible</li>
+        <li>Do NOT claim that you created the artwork.</li>
+        <li>Do NOT use the artwork for NFTs or AI Training.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Working Process</h2>
+      <ol>
+        <li>After I receive your form, <strong>I will reach you out</strong> through Discord, Telegram, or email that you provide in the form. We can discuss further details (pose, expression, etc).</li>
+        <li><strong>I will inform you once I'm ready</strong> to work with the artwork.</li>
+        <li>Once all the details are sorted out, I will start working on the sketch. I might update regularly in case you want to revise something.</li>
+        <li>After we agree on the sketch and <strong>the payment is done fully,</strong> I will work on the linework. You're still able to revise things at this point.</li>
+        <li>Once the linework is done, I will proceed on the base coloring. From now on, aside from some color tweaks, <strong>any revision is prohibited.</strong></li>
+        <li>Once everything is done, I will ask you where to send you the artwork.</li>
+      </ol>
+    </div>
+
+    <button class="big-button" data-page-name="form">I agree with the Terms of Service</button>
+  </div>
+
+  <div class="page" data-page-name="form" hidden>
+    <div class="section">
+      <h2>Submission Form</h2>
+      <form action="" id="main-form">
+        <div class="input-field">
+          <h3>What is your name? <span class="required" data-checks="name">REQUIRED</span></h3>
+          <label for="form-name" hidden>Your name</label>
+          <input type="text" id="form-name">
+        </div>
+
+        <div class="input-field">
+          <h3>Give me a way to contact you, please fill at least 2. <span class="required" data-checks="contacts">TWO REQUIRED</span></h3>
+
+          <div class="input-group">
+            <label for="form-contact-telegram" style="width: 100px;">Telegram</label>
+            <input type="text" id="form-contact-telegram" style="flex: 1">
+          </div>
+
+          <div class="input-group">
+            <label for="form-contact-discord" style="width: 100px;">Discord</label>
+            <input type="text" id="form-contact-discord" style="flex: 1">
+          </div>
+
+          <div class="input-group">
+            <label for="form-contact-email" style="width: 100px;">Email</label>
+            <input type="text" id="form-contact-email" style="flex: 1">
+          </div>
+        </div>
+
+        <div class="input-field">
+          <h3>What type of commission do you want to order?</h3>
+          <div class="input-group">
+            <img src="wa-1.png" height="400px" data-radio-choice="1" hidden>
+            <img src="wa-2.png" height="400px" data-radio-choice="2" hidden>
+            <img src="wa-3.png" height="400px" data-radio-choice="3">
+            <div class="radio-choices" style="flex: 1;">
+              <div class="input-group">
+                <input type="radio" name="form-type" id="form-type-1" value="1">
+                <label for="form-type-1">Headshot or Chibi - $10/Rp90.000</label>
+              </div>
+              <div class="input-group">
+                <input type="radio" name="form-type" id="form-type-2" value="2">
+                <label for="form-type-2">Half body - $12/Rp110.000</label>
+              </div>
+              <div class="input-group">
+                <input type="radio" name="form-type" id="form-type-3" value="3" checked="checked">
+                <label for="form-type-3">Full body - $15/Rp140.000</label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="input-field">
+          <h3>Please provide some links to the reference of your character. <span class="required" data-checks="ref">REQUIRED</span></h3>
+          <textarea name="" id="form-references" autocomplete="off"></textarea>
+        </div>
+
+        <div class="input-field">
+          <h3>Describe the artwork, pose, expressions, and any additional notes that you want me to draw.</h3>
+          <span>You can leave it blank if you want to give me artistic freedom.</span>
+          <textarea name="" id="form-notes" autocomplete="off"></textarea>
+        </div>
+      </form>
+    </div>
+
+    <button class="big-button" data-page-name="submitted" disabled>Please fill all required fields.</button>
+  </div>
+
+  <div class="page" data-page-name="submitted" hidden>
+    <div class="section" style="text-align: center;">
+      <h1>Thank you for submitting!</h1>
+      <p>If I haven't contacted you in a while, feel free to contact me:</p>
+      <p>Twitter: <a target="_blank" href="https://x.com/_allealle_">@_allealle_</a></p>
+      <p>Telegram: <a target="_blank" href="https://t.me/AlleAle">@AlleAle</a></p>
+      <p>Discord: <a target="_blank" href="https://discord.com/users/326585972601126923">#_allealle_</a></p>
+    </div>
+    <div class="credit">Website designed by <a target="_blank" href="https://x.com/PseudoLW">PseudoLW</a></div>
+  </div>
+
+  <script>
+    const submitBtn = document.querySelector('[data-page-name=submitted]');
+    document.querySelectorAll('button[data-page-name]').forEach((btn) => {
+      if (btn === submitBtn) {
+        return;
+      }
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('div[data-page-name]').forEach((pg) => {
+          if (pg.dataset['pageName'] === btn.dataset['pageName']) {
+            pg.hidden = false;
+          } else {
+            pg.hidden = true;
+          }
+        });
+        window.scrollTo(0, 0);
+      });
+    });
+
+    document.getElementById('main-form').reset();
+    document.querySelectorAll('[name=form-type]').forEach((radio) => {
+      radio.addEventListener('input', () => {
+        document.querySelectorAll('[data-radio-choice]').forEach((img) => {
+          if (img.dataset['radioChoice'] === radio.value) {
+            img.hidden = false;
+          } else {
+            img.hidden = true;
+          }
+        });
+      });
+    });
+    // Validator
+    const fields = document.querySelectorAll('#main-form input, #main-form textarea');
+
+    const validators = {
+      name: (s) => s.length > 0,
+      contacts: (s) => s.length >= 2,
+      type: (s) => true,
+      ref: (s) => s.length > 0,
+      notes: (s) => true
+    };
+    let currentField = null;
+    fields.forEach((inp) => {
+      inp.addEventListener('input', (ev) => {
+        const fields = {
+          name: document.getElementById('form-name').value,
+          contacts: ['telegram', 'discord', 'email']
+            .map(s => [s, document.getElementById(`form-contact-${s}`).value])
+            .filter(s => s[1] !== '')
+            .map(s => `[${s[0]}] ${s[1]}`),
+          type: [1, 2, 3]
+            .map(s => document.getElementById(`form-type-${s}`))
+            .filter(s => s.checked)[0]?.value,
+          ref: document.getElementById('form-references').value,
+          notes: document.getElementById('form-notes').value,
+        };
+
+        let allValid = true;
+        for (const field in fields) {
+          const isValid = validators[field](fields[field]);
+          const requiredMark = document.querySelector(`[data-checks=${field}]`);
+
+          if (!isValid) {
+            if (requiredMark) {
+              requiredMark.hidden = false;
+            }
+            allValid = false;
+          } else {
+            if (requiredMark) {
+              requiredMark.hidden = true;
+            }
+          }
+        }
+        if (allValid) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit!';
+        } else {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Please fill all required fields.';
+        }
+        currentField = fields;
+      });
+    });
+
+    submitBtn.addEventListener('click', async () => {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+      const typeMapper = {
+        '1': 'Headshot / Chibi ($10 / Rp90.000)',
+        '2': 'Half Body ($12 / Rp110.000)',
+        '3': 'Full body ($15 / Rp140.000)'
+      };
+      const formData = new FormData();
+      const formFields = [
+        ['entry.1511309406', currentField.name],
+        ['entry.1031949721', currentField.contacts.join('\n')],
+        ['entry.14432854', typeMapper[currentField.type]],
+        ['entry.156563357', currentField.ref],
+        ['entry.1042390724', currentField.notes],
+        ['fvv', '1'],
+        ['pageHistory', '0,1,2'],
+        ['fbzx', '-4919308327130502873']
+      ].forEach(e => formData.append(e[0], e[1]));
+
+      await fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSf2aRbK-sCUk8GRpKKORUxobMTtyT8em0dde_P3XGTh3xRClw/formResponse', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      });
+
+      document.querySelector('div[data-page-name=form]').hidden = true;
+      document.querySelector('div[data-page-name=submitted]').hidden = false;
+
+      window.scrollTo(0, 0);
+    });
+  </script>
+</body>
+
+</html>
