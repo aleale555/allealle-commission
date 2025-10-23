@@ -67,6 +67,14 @@
       border-radius: 5px;
     }
 
+    .example-button {
+      background-color: #FD0;
+      padding: 8px;
+      border: none;
+      border-radius: 5px;
+      align-self: center;
+    }
+
     h1 {
       font-size: 30pt;
     }
@@ -85,7 +93,8 @@
       color: #fff;
     }
 
-    .big-button:hover:not(:disabled) {
+    .big-button:hover:not(:disabled),
+    .example-button:hover {
       filter: brightness(90%);
       cursor: pointer;
     }
@@ -168,13 +177,41 @@
       font-size: 10pt;
       color: #ccc;
     }
+
+    .image-set {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+    }
+
+    .image-set>img {
+      height: 250px;
+      object-fit: contain;
+      border: 2px solid #FD0;
+      border-radius: 5px;
+    }
+
+    .portfolio-images {
+      padding-top: 10px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 5px;
+    }
+
+    [data-page-name="portfolio"] h3 {
+      border-bottom: 2px solid white;
+    }
   </style>
 </head>
 
 <body>
   <div class="page" data-page-name="landing">
     <div class="section" style="text-align: center;">
-      <h1>AlleAlle's Commission Page</h1>
+      <h1><img src="star.png"> AlleAlle's Commission Page <img src="star.png"></h1>
       <p>Before you decide to commission, make sure to read Terms of Service!</p>
     </div>
     <button class="big-button" data-page-name="terms-of-service">Read the Terms of Service</button>
@@ -266,16 +303,17 @@
             <div class="radio-choices" style="flex: 1;">
               <div class="input-group">
                 <input type="radio" name="form-type" id="form-type-1" value="1">
-                <label for="form-type-1">Headshot or Chibi - $10/Rp90.000</label>
+                <label for="form-type-1">Headshot or Chibi - $10</label>
               </div>
               <div class="input-group">
                 <input type="radio" name="form-type" id="form-type-2" value="2">
-                <label for="form-type-2">Half body - $12/Rp110.000</label>
+                <label for="form-type-2">Half body - $12</label>
               </div>
               <div class="input-group">
                 <input type="radio" name="form-type" id="form-type-3" value="3" checked="checked">
-                <label for="form-type-3">Full body - $15/Rp140.000</label>
+                <label for="form-type-3">Full body - $15</label>
               </div>
+              <button class="example-button" type="button" data-page-name="portfolio">Show me more examples!</button>
             </div>
           </div>
 
@@ -295,6 +333,60 @@
     </div>
 
     <button class="big-button" data-page-name="submitted" disabled>Please fill all required fields.</button>
+  </div>
+
+  <div class="page" data-page-name="portfolio" hidden>
+    <div class="section">
+      <h2>Portfolio</h2>
+      <span>Here you can find some of the images that I've done.</span>
+
+      <h3>Chibi & Headshot</h3>
+      <div class="portfolio-images">
+        <div class="image-set">
+          <img src="https://drive.google.com/thumbnail?id=1jGN7HCV0dvm9rMV9UvhFjfIPOnWQJ3tp&sz=w1000">
+        </div>
+        <div class="image-set">
+          <img src="https://drive.google.com/thumbnail?id=1dZlyfTaNSTULUjX15E0y65lLDhErgyHv&sz=w1000">
+        </div>
+        <div class="image-set">
+          <img src="https://drive.google.com/thumbnail?id=16y6YCjxeQls8Yk6VKwewDM6f4AqSyplz&sz=w1000">
+        </div>
+        <div class="image-set">
+          <img src="https://drive.google.com/thumbnail?id=1eY8CXB9mb45TpO21Bs0FZZe9lpOW6foG&sz=w1000">
+        </div>
+      </div>
+      <h3>Halfbody</h3>
+      <div class="portfolio-images">
+        <div class="image-set">
+          <img src="https://drive.google.com/thumbnail?id=1TB1xUt-Tu-PRUoI7C5YW22CSpIURgy5C&sz=w1000">
+        </div>
+        <div class="image-set">
+          <img src="https://drive.google.com/thumbnail?id=1ukmLDJRLtw-hufDqYdwfAiOXJ26CDrrM&sz=w1000">
+        </div>
+        <div class="image-set">
+          <img src="https://drive.google.com/thumbnail?id=1dWstuGtGEirNsGQnZ4M0u6Te0qj3wdyM&sz=w1000">
+        </div>
+        <div class="image-set">
+          <img src="https://drive.google.com/thumbnail?id=1K_Y6utfQo8GSdl3dH3NqMAO-ZNRLpeOw&sz=w1000">
+        </div>
+      </div>
+      <h3>Fullbody</h3>
+      <div class="portfolio-images">
+        <div class="image-set">
+          <img src="https://drive.google.com/thumbnail?id=1zjM7GEV_IqW9PTjaF2otwgj5MA-9kKKf&sz=w1000">
+        </div>
+        <div class="image-set">
+          <img src="https://drive.google.com/thumbnail?id=130u01QBebleotpmQMadHOLz5Xgc2AvpQ&sz=w1000">
+        </div>
+        <div class="image-set">
+          <img src="https://drive.google.com/thumbnail?id=16XRtogxZEBtVXHcUChYOKWVaAqLPBYkm&sz=w1000">
+        </div>
+        <div class="image-set">
+          <img src="https://drive.google.com/thumbnail?id=1gkL2byva8nHy-3CM3aQpoYqwq52SQLb5&sz=w1000">
+        </div>
+      </div>
+    </div>
+    <button class="big-button" data-page-name="form">Back to form</button>
   </div>
 
   <div class="page" data-page-name="submitted" hidden>
