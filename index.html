@@ -67,14 +67,6 @@
       border-radius: 5px;
     }
 
-    .example-button {
-      background-color: #FD0;
-      padding: 8px;
-      border: none;
-      border-radius: 5px;
-      align-self: center;
-    }
-
     h1 {
       font-size: 30pt;
     }
@@ -93,8 +85,7 @@
       color: #fff;
     }
 
-    .big-button:hover:not(:disabled),
-    .example-button:hover {
+    .big-button:hover:not(:disabled) {
       filter: brightness(90%);
       cursor: pointer;
     }
@@ -173,6 +164,17 @@
       color: #FD0;
     }
 
+    button.link-like {
+      color: #FD0;
+      background-color: transparent;
+      border: none;
+      text-decoration: underline;
+      font-size: inherit;
+      cursor: pointer;
+      display: inline;
+      white-space: normal;
+    }
+
     .credit {
       font-size: 10pt;
       color: #ccc;
@@ -205,6 +207,16 @@
     [data-page-name="portfolio"] h3 {
       border-bottom: 2px solid white;
     }
+
+    img.slice {
+      height: 200px;
+    }
+
+    @media only screen and (min-width: 800px) {
+      img.slice {
+        height: 400px;
+      }
+    }
   </style>
 </head>
 
@@ -214,6 +226,7 @@
       <h1><img src="star.png"> AlleAlle's Commission Page <img src="star.png"></h1>
       <p>Before you decide to commission, make sure to read Terms of Service!</p>
     </div>
+    <button class="big-button" data-page-name="portfolio">Look at some Examples</button>
     <button class="big-button" data-page-name="terms-of-service">Read the Terms of Service</button>
   </div>
 
@@ -295,25 +308,24 @@
         </div>
 
         <div class="input-field">
-          <h3>What type of commission do you want to order?</h3>
+          <h3>Choose the type of commission do you want to order. <button class="link-like" type="button" data-page-name="portfolio" id="port-alt">Look at examples here.</button></h3>
           <div class="input-group">
-            <img src="wa-1.png" height="400px" data-radio-choice="1" hidden>
-            <img src="wa-2.png" height="400px" data-radio-choice="2" hidden>
-            <img src="wa-3.png" height="400px" data-radio-choice="3">
+            <img src="wa-1.png" class="slice" data-radio-choice="1" hidden>
+            <img src="wa-2.png" class="slice" data-radio-choice="2" hidden>
+            <img src="wa-3.png" class="slice" data-radio-choice="3">
             <div class="radio-choices" style="flex: 1;">
               <div class="input-group">
                 <input type="radio" name="form-type" id="form-type-1" value="1">
-                <label for="form-type-1">Headshot or Chibi - $10</label>
+                <label for="form-type-1">Headshot or Chibi - $10/Rp90k</label>
               </div>
               <div class="input-group">
                 <input type="radio" name="form-type" id="form-type-2" value="2">
-                <label for="form-type-2">Half body - $12</label>
+                <label for="form-type-2">Half body - $12/Rp110k</label>
               </div>
               <div class="input-group">
                 <input type="radio" name="form-type" id="form-type-3" value="3" checked="checked">
-                <label for="form-type-3">Full body - $15</label>
+                <label for="form-type-3">Full body - $15/Rp140k</label>
               </div>
-              <button class="example-button" type="button" data-page-name="portfolio">Show me more examples!</button>
             </div>
           </div>
 
@@ -332,6 +344,7 @@
       </form>
     </div>
 
+    <button class="big-button" data-page-name="terms-of-service">Review Terms of Service</button>
     <button class="big-button" data-page-name="submitted" disabled>Please fill all required fields.</button>
   </div>
 
@@ -361,7 +374,7 @@
           <img src="https://drive.google.com/thumbnail?id=1TB1xUt-Tu-PRUoI7C5YW22CSpIURgy5C&sz=w1000">
         </div>
         <div class="image-set">
-          <img src="https://drive.google.com/thumbnail?id=1ukmLDJRLtw-hufDqYdwfAiOXJ26CDrrM&sz=w1000">
+          <img src="https://drive.google.com/thumbnail?id=1wAv21_NFnIk6xShWE4Ysw-bjfLMeUQbu&sz=w1000">
         </div>
         <div class="image-set">
           <img src="https://drive.google.com/thumbnail?id=1dWstuGtGEirNsGQnZ4M0u6Te0qj3wdyM&sz=w1000">
@@ -386,7 +399,7 @@
         </div>
       </div>
     </div>
-    <button class="big-button" data-page-name="form">Back to form</button>
+    <button class="big-button" data-page-name="landing" id="portfolio-back">Back</button>
   </div>
 
   <div class="page" data-page-name="submitted" hidden>
@@ -433,6 +446,9 @@
     // Validator
     const fields = document.querySelectorAll('#main-form input, #main-form textarea');
 
+    document.getElementById('port-alt').addEventListener('click', () => {
+      document.getElementById('portfolio-back').setAttribute('data-page-name', 'form');
+    });
     const validators = {
       name: (s) => s.length > 0,
       contacts: (s) => s.length >= 2,
